@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+body {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #484848;
+    padding: 4em 2em;
+}
+
+.wrapper {
+    max-width: 400px;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5em;
+    letter-spacing: 0.4px;
+    text-align: center;
+}
+
+p {
+    line-height: 1.8em;
+    letter-spacing: 0.4px;
+}
+
+.underlined {
+    border-bottom: 3px solid #65c3e6;
+    padding-bottom: 2px;
+    cursor: pointer;
+    transition: background-color 0.4s;
+}
+
+/* Base style end */
+
+.underlined:hover{
+    background-color: rgba(101, 196, 230, 0.4);
+}
+
+.tooltip {
+    position: relative;
+}
+
+.tooltip-content {
+    display: none;
+
+    position: absolute;
+    bottom: 140%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    min-width: 150px;
+    background-color: #232323;
+    color: #fff;
+    padding: 0.5em 1em;
+    border-radius: 0.7em;
+    font-size: 0.8em;
+    line-height: 1.5em;
+}
+
+.tooltip:hover .tooltip-content {
+    display: block;
+}
+
+.tooltip-content.bottom {
+    bottom: unset;
+    top: 140%;
+}
+
+.tooltip-content.left {
+    bottom: unset;
+    left: unset;
+    top: 50%;
+    right: 110%;
+    transform: translate(0, -50%);
+}
+.tooltip-content.right {
+    bottom: unset;
+    left: 110%;
+    top: 50%;
+    right: unset;
+    transform: translate(0, -50%);
+}
+
+/* Add triangle */
+
+.tooltip-content::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border: .5em solid transparent;
+    border-top-color: #232323;
+    transform: translate(-50%, 0);
+}
+
+.tooltip-content.bottom::before {
+    top: unset;
+    bottom: 100%;
+    border-color: transparent;
+    border-bottom-color: #232323;
+}
+
+.tooltip-content.left::before {
+    top: 50%;
+    left: 100%;
+    border-color: transparent;
+    border-left-color: #232323;
+    transform: translate(0, -50%);
+}
+
+.tooltip-content.right::before {
+    top: 50%;
+    left: unset;
+    right: 100%;
+    border-color: transparent;
+    border-right-color: #232323;
+    transform: translate(0, -50%);
+}
